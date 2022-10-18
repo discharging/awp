@@ -1,0 +1,14 @@
+﻿using System;
+namespace StdDetails
+{
+    public partial class DispInfo : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Label5.Text = "Student ID is " + TextBox1.Text;
+            Label6.Text = "Your Name is " + TextBox2.Text;
+            Label7.Text = "You have taken admission in the " + TextBox3.Text + " course.";
+            Label8.Text = "Your date of birth is " + Calendar1.SelectedDate.ToShortDateString();
+        }
+    }
+}

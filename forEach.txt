@@ -1,0 +1,14 @@
+﻿using System;
+namespace Operations
+{
+    public partial class Foreach : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Label1.Text = " ";
+            string[] colournames = new string[] { "red", "yellow", "blue", "green", "black", "pink" };
+            foreach (string cname in colournames)
+                Label1.Text = Label1.Text + " " + cname.ToString();
+        }
+    }
+}

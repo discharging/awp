@@ -1,0 +1,42 @@
+﻿using System;
+namespace Concepts
+{
+    public class X
+    {
+        public int pow2(int m)
+        {
+            return m * m;
+        }
+    }
+    public class Y : X
+    {
+        public int pow3(int m)
+        {
+            int n = pow2(m);
+            return n * m;
+        }
+    }
+    public class Z : X
+    {
+        public int pow4(int m)
+        {
+            int n = pow2(m);
+            return n * m * m;
+        }
+    }
+    public partial class Hierarchical : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(TextBox1.Text);
+            Y ob1 = new Y();
+            int p = ob1.pow2(a);
+            int q = ob1.pow3(a);
+            Z ob2 = new Z();
+            int r = ob2.pow4(a);
+            Label2.Text = "Square of " + a + " is " + p.ToString();
+            Label3.Text = "Cube of " + a + " is " + q.ToString();
+            Label4.Text = "Quadruple of " + a + " is " + r.ToString();
+        }
+    }
+}

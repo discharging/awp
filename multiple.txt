@@ -1,0 +1,43 @@
+﻿using System;
+namespace Concepts
+{
+    interface M
+    {
+        int pow2(int m);
+    }
+    interface N
+    {
+        int pow3(int m);
+    }
+    public class O : M , N
+    {
+        public int pow2(int m)
+        {
+            return m * m;
+        }
+        public int pow3(int m)
+        {
+            int n = pow2(m);
+            return n * m;
+        }
+        public int pow4(int m)
+        {
+            int n = pow3(m);
+            return n * m;
+        }
+    }
+    public partial class Multiple : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(TextBox1.Text);
+            O ob1 = new O();
+            int x = ob1.pow2(a);
+            int y = ob1.pow3(a);
+            int z = ob1.pow4(a);
+            Label2.Text = "Square of " + a + " is " + x.ToString();
+            Label3.Text = "Cube of " + a + " is " + y.ToString();
+            Label4.Text = "Quadruple of " + a + " is " + z.ToString();
+        }
+    }
+}

@@ -1,0 +1,26 @@
+﻿using System;
+delegate int NumberChanger(int n);
+namespace Concepts2
+{
+    public partial class Delegate : System.Web.UI.Page
+    {
+        static int num = 10;
+        public static int Addnum(int p)
+        {
+            int a = num + p;
+            return a;
+        }
+        public static int MultNum(int q)
+        {
+            int b = num * q;
+            return b;
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            NumberChanger nc1 = new NumberChanger(Addnum);
+            NumberChanger nc2 = new NumberChanger(MultNum);
+            Label2.Text = "Addition = " + Convert.ToString(nc1(25));
+            Label3.Text = "Multiplication = " + Convert.ToString(nc2(5));
+        }
+    }
+}

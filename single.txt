@@ -1,0 +1,31 @@
+﻿using System;
+namespace Concepts
+{
+    public class P
+    {
+        public int pow2(int m)
+        {
+            return m * m;
+        }
+    }
+    public class Q : P
+    {
+        public int pow3(int m)
+        {
+            int n = pow2(m);
+            return n * m;
+        }
+    }
+    public partial class Single : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(TextBox1.Text);
+            Q ob1 = new Q();
+            int x = ob1.pow2(a);
+            int y = ob1.pow3(a);
+            Label2.Text = "Square of " + a + " is " + x.ToString();
+            Label3.Text = "Cube of " + a + " is " + y.ToString();
+        }
+    }
+}

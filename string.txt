@@ -1,0 +1,24 @@
+﻿using System;
+namespace StringOpr
+{
+    public partial class stringoperations : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string s = TextBox1.Text;
+            Label2.Text = "String length: " + s.Length;
+            Label3.Text = "Substring: " + s.Substring(4, 7);
+            Label4.Text = "Upper case: " + s.ToUpper();
+            Label5.Text = "Lower case: " + s.ToLower();
+            Label6.Text = "Replace s by t: " + s.Replace('s', 't');
+            Label7.Text = "Insert d in the string: " + s.Insert(4, "d");
+            Label8.Text = "String truncate: " + s.Trim();
+            Label9.Text = "Remove string: " + s.Remove(5);
+            Label10.Text = "Index of d in the string: " + s.IndexOf('.');
+            string rev = "";
+            for (int i = s.Length - 1; i >= 0; i--)
+                rev = rev + s[i];
+            Label11.Text = "Reverse of the string: " + rev.ToString();
+        }
+    }
+}

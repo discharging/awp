@@ -1,0 +1,29 @@
+﻿using System;
+namespace Concepts
+{
+    public partial class FuncOverloading : System.Web.UI.Page
+    {
+        public int add(int a)
+        {
+            return a + a;
+        }
+        public int add(int a, int b)
+        {
+            return a + b;
+        }
+        public int add(int a, int b, int c)
+        {
+            return a + b + c;
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            int x, y, z;
+            x = add(7);
+            y = add(5, 90);
+            z = add(3, 89, 1);
+            Label2.Text = x.ToString();
+            Label3.Text = y.ToString();
+            Label4.Text = z.ToString();
+        }
+    }
+}

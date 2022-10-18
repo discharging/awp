@@ -1,0 +1,21 @@
+﻿using System;
+namespace Operations
+{
+    public partial class MoneyConv : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            double d, r;
+            d = Convert.ToDouble(TextBox1.Text);
+            r = 79.9 * d;
+            Label2.Text = d + " dollars is " + r.ToString() + " rupees.";
+        }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            double r, d;
+            r = Convert.ToDouble(TextBox1.Text);
+            d = r / 79.9;
+            Label2.Text = r + " rupees is " + d.ToString() + " dollars.";
+        }
+    }
+}

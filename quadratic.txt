@@ -1,0 +1,54 @@
+﻿using System;
+namespace Operations
+{
+    public partial class QuadEq : System.Web.UI.Page
+    {
+        
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            double a, b, c;
+            a = Convert.ToDouble(TextBox1.Text);
+            b = Convert.ToDouble(TextBox2.Text);
+            c = Convert.ToDouble(TextBox3.Text);
+            int m;
+            double r1, r2, d1;
+            d1 = b * b - 4 * a * c;
+            if (a == 0)
+                m = 1;
+            else if (d1 > 0)
+                m = 2;
+            else if (d1 == 0)
+                m = 3;
+            else
+                m = 4;
+            switch (m)
+            {
+                case 1:
+                    Label5.Text = "Not a Quadratic equation, Linear equation.";
+                    Label6.Text = "";
+                    Label7.Text = "";
+                    break;
+                case 2:
+                    Label5.Text = "Roots are Real and Distinct.";
+                    r1 = (-b + Math.Sqrt(d1)) / (2 * a);
+                    r2 = (-b - Math.Sqrt(d1)) / (2 * a);
+                    Label6.Text = "First root is " + r1;
+                    Label7.Text = "Second root is " + r2;
+                    break;
+                case 3:
+                    Label5.Text = "Roots are Real and Equal.";
+                    r1 = r2 = (-b) / (2 * a);
+                    Label6.Text = "First root is " + r1;
+                    Label7.Text = "Second root is " + r2;
+                    break;
+                case 4:
+                    Label5.Text = "Roots are Imaginary.";
+                    r1 = (-b) / (2 * a);
+                    r2 = Math.Sqrt(-d1) / (2 * a);
+                    Label6.Text = "First root is  + i " + r1 + r2;
+                    Label7.Text = "Second root is  - i " + r1 + r2;
+                    break;
+            }
+        }
+    }
+}

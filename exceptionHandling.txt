@@ -1,0 +1,25 @@
+﻿using System;
+namespace Concepts2
+{
+    public partial class ExcpHandling : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int a = Convert.ToInt32(TextBox1.Text);
+                int[] b = { 11, 22, 33 };
+                int res = (b[10] / a);
+                Label2.Text = "The Result is: " + res.ToString();
+            }
+            catch(System.DivideByZeroException)
+            {
+                Label3.Text = "DivideByZeroException";
+            }
+            catch(System.IndexOutOfRangeException)
+            {
+                Label4.Text = "IndexOutOfRangeException";
+            }
+        }
+    }
+}

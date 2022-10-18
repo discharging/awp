@@ -1,0 +1,41 @@
+﻿using System;
+namespace Concepts
+{
+    public class A
+    {
+        public int pow2(int m)
+        {
+            return m * m;
+        }
+    }
+    public class B : A
+    {
+        public int pow3(int n)
+        {
+            int x = pow2(n);
+            return x * n;
+        }
+    }
+    public class C : B
+    {
+        public int pow4(int o)
+        {
+            int y = pow3(o);
+            return y * o;
+        }
+    }
+    public partial class Multilevel : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(TextBox1.Text);
+            C ob1 = new C();
+            int x = ob1.pow2(a);
+            int y = ob1.pow3(a);
+            int z = ob1.pow4(a);
+            Label2.Text = "Square of " + a + " is " + x.ToString();
+            Label3.Text = "Cube of " + a + " is " + y.ToString();
+            Label4.Text = "Quadruple of " + a + " is " + z.ToString();
+        }
+    }
+}

@@ -1,0 +1,20 @@
+﻿using System;
+using System.Configuration;
+using System.Data.SqlClient;
+namespace Database2
+{
+    public partial class NonQuery : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            String connStr = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(connStr);
+            String InsertQuery = "insert into students values(@NAME)";
+            SqlCommand cmd = new SqlCommand(InsertQuery, con); cmd.Parameters.AddWithValue("@NAME", TextBox1.Text);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Label2.Text = "Record inserted succesfully";
+            con.Close();
+        }
+    }
+}

@@ -1,0 +1,21 @@
+﻿using System;
+namespace Operations
+{
+    public partial class Primenum : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int num,counter;
+            num=Convert.ToInt32(TextBox1.Text);
+            for (counter = 2; counter <= num / 2; counter++)
+                if (num % counter == 0)
+                    break;
+            if (num == 1)
+                Label2.Text = num + " is neither prime nor composite";
+            else if (counter < (num / 2))
+                Label2.Text = num + " is not a prime number";
+            else
+                Label2.Text = num + " is a prime number";
+        }
+    }
+}

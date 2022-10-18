@@ -1,0 +1,22 @@
+﻿using System;
+namespace Operations
+{
+    public partial class RevSum : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            long num, i, sum = 0, rev = 0;
+            num = Convert.ToInt32(TextBox1.Text);
+            while (num > 0)
+            {
+                i = num % 10;
+                sum = i + sum;
+                rev = i + rev * 10;
+                num = num / 10;
+
+            }
+            Label2.Text = "Sum of the digits of number is: " + sum.ToString();
+            Label3.Text = "Reverse of the number is: " + rev.ToString();
+        }
+    }
+}

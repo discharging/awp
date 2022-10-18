@@ -1,0 +1,57 @@
+﻿using System;
+using System.Web.UI.WebControls;
+
+namespace CalendarCont
+{
+    public partial class Operations : System.Web.UI.Page
+    {
+        protected void Calendar1_DayRender(object sender,System.Web.UI.WebControls.DayRenderEventArgs e)
+        {
+            if (e.Day.Date.Day == 5 && e.Day.Date.Month == 9)
+            {
+                e.Cell.BackColor = System.Drawing.Color.Yellow;
+                Label lbl = new Label();
+                lbl.Text = "<br>Teachers Day!";
+                e.Cell.Controls.Add(lbl);
+            }
+            if (e.Day.Date.Day == 13 && e.Day.Date.Month == 9)
+            {
+                Calendar1.SelectedDate = new DateTime(2022, 9, 13);
+                Calendar1.SelectedDates.SelectRange(Calendar1.SelectedDate,Calendar1.SelectedDate.AddDays(9));
+                Label lbl1 = new Label();
+                lbl1.Text = "<br>Ganpati!";
+                e.Cell.Controls.Add(lbl1);
+            }
+        }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Calendar1.Caption = "Calendar";
+            Calendar1.FirstDayOfWeek = FirstDayOfWeek.Sunday;
+            Calendar1.NextPrevFormat = NextPrevFormat.ShortMonth;
+            Calendar1.TitleFormat = TitleFormat.Month;
+            Label7.Text = Calendar1.TodaysDate.ToShortDateString();
+            Label8.Text = "13-9-2022";
+            TimeSpan d = new DateTime(2022, 9, 13) - DateTime.Now;
+            Label9.Text = d.Days.ToString();
+            TimeSpan d1 = new DateTime(2022, 12, 31) - DateTime.Now;
+            Label10.Text = d1.Days.ToString();
+            if (Calendar1.SelectedDate.ToShortDateString() == "9-13-2022")
+                Label8.Text = "<b>Ganpati Vacation Start</b>";
+            if (Calendar1.SelectedDate.ToShortDateString() == "9-22-2022")
+                Label8.Text = "<b>Ganpati Vacation End</b>";
+        }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Label6.Text = "";
+            Label7.Text = "";
+            Label8.Text = "";
+            Label9.Text = "";
+            Label10.Text = "";
+            Calendar1.SelectedDates.Clear();
+        }
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            Label6.Text = Calendar1.SelectedDate.Date.ToString();
+        }
+    }
+}

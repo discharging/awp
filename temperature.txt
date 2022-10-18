@@ -1,0 +1,22 @@
+﻿using System;
+namespace Operations
+{
+    public partial class TempConv : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            double c, f;
+            c = Convert.ToDouble(TextBox1.Text);
+            f = (c * 1.8) + 32;
+            Label2.Text = c + " °C is " + f.ToString() + " °F.";
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            double c, f;
+            f = Convert.ToDouble(TextBox1.Text);
+            c = (f - 32) / 1.8;
+            Label2.Text = f + " °F is " + c.ToString() + " °C.";
+        }
+    }
+}

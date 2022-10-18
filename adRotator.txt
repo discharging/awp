@@ -1,0 +1,23 @@
+﻿<Advertisements>
+	<Ad>
+		<ImageUrl>dell.png</ImageUrl>
+		<NavigateUrl>https://www.dell.com/en-in</NavigateUrl>
+		<AlternateText>Order Laptops</AlternateText>
+		<Impressions>20</Impressions>
+		<Keyword>Electronics</Keyword>
+	</Ad>
+	<Ad>
+		<ImageUrl>handm.png</ImageUrl>
+		<NavigateUrl>https://www2.hm.com/en_us/index.html</NavigateUrl>
+		<AlternateText>Order Outfits</AlternateText>
+		<Impressions>20</Impressions>
+		<Keyword>Fashion</Keyword>
+	</Ad>
+	<Ad>
+		<ImageUrl>Hyundai.jpg</ImageUrl>
+		<NavigateUrl>https://www.hyundai.com/in/en</NavigateUrl>
+		<AlternateText>Book your Car</AlternateText>
+		<Impressions>20</Impressions>
+		<Keyword>Automobile</Keyword>
+	</Ad>
+</Advertisements>

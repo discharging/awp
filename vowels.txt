@@ -1,0 +1,30 @@
+﻿using System;
+namespace Operations
+{
+    public partial class Vowels : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            char ch;
+            ch = Convert.ToChar(TextBox1.Text);
+            switch (ch)
+            {
+                case 'a':
+                case 'A':
+                case 'e':
+                case 'E':
+                case 'i':
+                case 'I':
+                case 'o':
+                case 'O':
+                case 'u':
+                case 'U':
+                    Label2.Text = ch + " is a vowel.";
+                    break;
+                    default:
+                    Label2.Text = ch + " is a consonant.";
+                    break;
+            }
+        }
+    }
+}

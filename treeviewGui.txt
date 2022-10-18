@@ -1,0 +1,47 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DispInfo.aspx.cs" Inherits="TreeviewCont.DispInfo" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="Treeview Control Navigation:"></asp:Label>
+            <br />
+            <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows">
+                <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                <Nodes>
+                    <asp:TreeNode Text="ASP.NET Practicals" Value="ASP.NET Practicals">
+                        <asp:TreeNode Text="Calendar control" Value="Calendar control" NavigateUrl="~/WebForm1.aspx"></asp:TreeNode>
+                        <asp:TreeNode Text="Constructor Overloading" Value="Constructor Overloading"></asp:TreeNode>
+                        <asp:TreeNode Text="Inheritance" Value="Inheritance"></asp:TreeNode>
+                        <asp:TreeNode Text="Class Properties" Value="Class Properties"></asp:TreeNode>
+                    </asp:TreeNode>
+                </Nodes>
+                <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                <ParentNodeStyle Font-Bold="False" />
+                <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
+            </asp:TreeView>
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Fetch Datalist using XML data:" Font-Bold="True"></asp:Label>
+            <br />
+            <asp:DataList ID="DataList1" runat="server">
+                <ItemTemplate>
+                    <table class = "table" border="1">
+                        <tr>
+                            <td>Roll Num : <%# Eval("sid") %><br />
+                                Name : <%# Eval("sname") %><br />
+                                Class : <%# Eval("sclass")%>
+                            </td>
+                        </tr>
+                    </table>
+                </ItemTemplate>
+            </asp:DataList>
+            <br />
+        </div>
+    </form>
+</body>
+</html>

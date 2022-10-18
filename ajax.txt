@@ -1,0 +1,20 @@
+﻿using System;
+namespace AjaxCont
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            String time = DateTime.Now.ToLongTimeString();
+            Label2.Text = "Time Inside Update Panel - " + time;
+            //Label4.Text = "Time Outside Update Panel - " + time;
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            String time = DateTime.Now.ToLongTimeString();
+            Label2.Text = "Time Inside Update Panel - " + time;
+            Label4.Text = "Time Outside Update Panel - " + time;
+        }
+    }
+}

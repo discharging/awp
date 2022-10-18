@@ -1,0 +1,27 @@
+﻿using System;
+using System.Configuration;
+using System.Data.SqlClient;
+
+namespace _7Adatabinding
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (IsPostBack == false)
+            {
+                string connStr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                SqlConnection con = new SqlConnection(connStr);
+                SqlCommand cmd = new SqlCommand("Select Distinct cname from country", con);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                DropDownList1.DataSource = reader;
+                DropDownList1.DataTextField = "cname";
+                DropDownList1.DataBind();
+                reader.Close();
+                con.Close();
+            }
+            Label2.Text = "You Have Selected : " + DropDownList1.SelectedValue;
+        }
+    }
+}
